@@ -25,4 +25,5 @@ include(":adapter")
 include(":viewpageradapter")
 include(":permissions")
 include(":reusableapi")
+include(":media-picker")
 

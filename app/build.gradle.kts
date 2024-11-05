@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":viewpageradapter"))
     implementation(project(":permissions"))
     implementation(project(":reusableapi"))
+    implementation(project(":media-picker"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
