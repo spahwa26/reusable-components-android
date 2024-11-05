@@ -45,6 +45,7 @@ dependencies {
     implementation(project(":reusableapi"))
     implementation(project(":media-picker"))
     implementation(project(":payment-app"))
+    implementation(project(":ml-kit"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
