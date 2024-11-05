@@ -26,4 +26,4 @@ include(":viewpageradapter")
 include(":permissions")
 include(":reusableapi")
 include(":media-picker")
-
+include(":payment-app")
