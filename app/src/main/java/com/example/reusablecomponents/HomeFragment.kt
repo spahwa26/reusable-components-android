@@ -1,5 +1,6 @@
 package com.example.reusablecomponents
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -45,15 +46,30 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     }
 
                     ModuleTypes.Payments -> {
-                        startActivity(Intent(requireContext(), ChoosePaymentGatewayActivity::class.java))
+                        startActivity(
+                            Intent(
+                                requireContext(),
+                                ChoosePaymentGatewayActivity::class.java
+                            )
+                        )
                     }
 
                     ModuleTypes.MediaPicker -> {
                         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSelectMediaFragment())
                     }
 
-                    else -> {
+                    ModuleTypes.TabsExample -> {
                         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabExampleFragment())
+                    }
+
+                    else -> {
+                        AlertDialog.Builder(requireContext())
+                            .setTitle("Error")
+                            .setMessage("${moduleType.name} module is not implemented yet.")
+                            .setPositiveButton(
+                                "ok"
+                            ) { dialog, which -> dialog.dismiss() }
+                            .show()
                     }
                 }
             })
