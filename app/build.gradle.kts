@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.android.navigation.safeargs)
+    alias(libs.plugins.android.ksp)
 }
 
 android {
@@ -48,6 +50,8 @@ dependencies {
     implementation(project(":payment-app"))
     implementation(project(":ml-kit"))
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -55,4 +59,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.glide)
+    ksp(libs.glide.compiler)
+            //ksp "kapt 'com.github.bumptech.glide:compiler:4.14.2'")
+    // Navigation
+    // suppress the warning because fastlane build is not compatible with higher versions
+    //noinspection GradleDependency
+    //implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    //noinspection GradleDependency
+    //implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 }
