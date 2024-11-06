@@ -12,7 +12,9 @@ import com.example.reusablecomponents.databinding.FragmentHomeBinding
 import com.example.reusablecomponents.databinding.ItemModuleTypeBinding
 import com.example.reusablecomponents.utils.BaseFragment
 import com.example.reusablecomponents.utils.ModuleTypes
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private lateinit var listAdapter: GenericAdapter<ModuleTypes, ItemModuleTypeBinding>
 
@@ -35,12 +37,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             },
             onItemClick = { moduleType, position ->
                 when (moduleType) {
+                    ModuleTypes.Payments -> {
+                        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPaymentApp())
+                    }
+
                     ModuleTypes.MediaPicker -> {
                         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSelectMediaFragment())
                     }
 
                     else -> {
-                        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSelectMediaFragment())
+                        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabExampleFragment())
                     }
                 }
             })

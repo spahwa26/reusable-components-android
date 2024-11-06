@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.android.navigation.safeargs)
     alias(libs.plugins.android.ksp)
+    alias(libs.plugins.android.hilt)
 }
 
 android {
@@ -61,11 +62,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.glide)
     ksp(libs.glide.compiler)
-            //ksp "kapt 'com.github.bumptech.glide:compiler:4.14.2'")
-    // Navigation
-    // suppress the warning because fastlane build is not compatible with higher versions
-    //noinspection GradleDependency
-    //implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
-    //noinspection GradleDependency
-    //implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    implementation(libs.hilt.android)
+    ksp(libs.dagger.hilt.compiler)
 }

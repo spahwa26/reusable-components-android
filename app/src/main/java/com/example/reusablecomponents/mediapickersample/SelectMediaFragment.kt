@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reusablecomponents.R
 import com.example.reusablecomponents.databinding.FragmentSelectMediaBinding
 import com.nickelfox.media_picker.ui.MediaPickerForFragment
+import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 
+@AndroidEntryPoint
 class SelectMediaFragment : Fragment() {
     private lateinit var binding: FragmentSelectMediaBinding
     private lateinit var itemAdapter: SelectedMediaAdapter

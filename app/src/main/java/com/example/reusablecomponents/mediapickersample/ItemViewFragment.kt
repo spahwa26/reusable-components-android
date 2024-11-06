@@ -9,8 +9,9 @@ import android.widget.MediaController
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import com.example.reusablecomponents.databinding.FragmentItemViewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ItemViewFragment(private var uri: Uri, private var type: String) : DialogFragment() {
 
     private lateinit var binding: FragmentItemViewBinding
