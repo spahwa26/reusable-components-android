@@ -72,9 +72,9 @@ fun getDataColumn(
 ): String? {
     var cursor: Cursor? = null
     val column = "_data"
-    val projection = arrayOf(
+    /*val projection = arrayOf(
         column
-    )
+    )*/
     try {
         cursor = context.contentResolver.query(
             uri, null, selection, selectionArgs, null

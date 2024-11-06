@@ -1,6 +1,6 @@
 [versions]
 agp = "8.5.2"
-kotlin = "1.9.0"
+kotlin = "1.9.22"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -10,7 +10,8 @@ material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.1.4"
 nav_version = "2.5.3"
-hilt = "2.45"
+hilt = "2.51.1"
+ksp = "1.9.22-1.0.17"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,4 +29,4 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "nav_version"}
 android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
-
+android-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
