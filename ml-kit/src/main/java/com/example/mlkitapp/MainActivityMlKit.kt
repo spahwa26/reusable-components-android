@@ -23,7 +23,7 @@ import com.esafirm.imagepicker.features.ImagePickerSavePath
 import com.esafirm.imagepicker.features.ReturnMode
 import com.esafirm.imagepicker.features.enableLog
 import com.esafirm.imagepicker.features.registerImagePicker
-import com.example.mlkitapp.databinding.ActivityMainBinding
+import com.example.mlkitapp.databinding.MlkitActivityMainBinding
 import com.example.mlkitapp.mlkit.FaceContourGraphic
 import com.example.mlkitapp.mlkit.GraphicOverlay
 import com.example.mlkitapp.mlkit.MLKitTextRecognitionHelper
@@ -35,10 +35,11 @@ import com.google.mlkit.vision.face.FaceDetectorOptions
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+@AndroidEntryPoint
+class MainActivityMlKit : AppCompatActivity() {
+    private lateinit var binding: MlkitActivityMainBinding
 
     private var mSelectedImage: Bitmap? = null
 
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = MlkitActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.buttonText.setOnClickListener { runTextRecognition() }
@@ -106,7 +107,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     private fun showPermissionDeniedDialog(headingText: String) {
-        val builder = AlertDialog.Builder(this@MainActivity)
+        val builder = AlertDialog.Builder(this@MainActivityMlKit)
         builder.setMessage(headingText)
         builder.setTitle("Permission Required")
         builder.setCancelable(false)
@@ -114,7 +115,7 @@ class MainActivity : AppCompatActivity() {
             "Yes"
         ) { dialog: DialogInterface?, _: Int ->
             startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
-                data = Uri.parse("package:${this@MainActivity.packageName}")
+                data = Uri.parse("package:${this@MainActivityMlKit.packageName}")
             })
             dialog?.dismiss()
         }

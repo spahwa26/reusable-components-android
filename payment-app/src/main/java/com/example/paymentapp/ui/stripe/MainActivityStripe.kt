@@ -2,16 +2,16 @@ package com.example.paymentapp.ui.stripe
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.paymentapp.databinding.ActivityMainBinding
+import com.example.paymentapp.databinding.StripeActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class MainActivityStripe : AppCompatActivity() {
+    private lateinit var binding: StripeActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = StripeActivityMainBinding.inflate(layoutInflater)
         return setContentView(binding.root)
     }
 }

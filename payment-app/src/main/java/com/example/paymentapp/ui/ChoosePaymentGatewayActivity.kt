@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.paymentapp.databinding.ActivityChoosePaymentGatewayBinding
 import com.example.paymentapp.ui.razorpay.RazorPayPaymentsActivity
-import com.example.paymentapp.ui.stripe.MainActivity
+import com.example.paymentapp.ui.stripe.MainActivityStripe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +22,7 @@ class ChoosePaymentGatewayActivity : AppCompatActivity() {
     private fun initListeners(){
         binding.apply {
             stripeBtn.setOnClickListener {
-                startActivity(Intent(this@ChoosePaymentGatewayActivity,MainActivity::class.java))
+                startActivity(Intent(this@ChoosePaymentGatewayActivity,MainActivityStripe::class.java))
             }
 
             razorPayBtn.setOnClickListener {

@@ -1,5 +1,6 @@
 package com.example.reusablecomponents
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.adapter.GenericAdapter
 import com.example.adapter.ItemComparator
 import com.example.adapter.setup
+import com.example.mlkitapp.MainActivityMlKit
+import com.example.paymentapp.ui.ChoosePaymentGatewayActivity
 import com.example.reusablecomponents.databinding.FragmentHomeBinding
 import com.example.reusablecomponents.databinding.ItemModuleTypeBinding
 import com.example.reusablecomponents.utils.BaseFragment
@@ -37,8 +40,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             },
             onItemClick = { moduleType, position ->
                 when (moduleType) {
+                    ModuleTypes.MlKit -> {
+                        startActivity(Intent(requireContext(), MainActivityMlKit::class.java))
+                    }
+
                     ModuleTypes.Payments -> {
-                        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPaymentApp())
+                        startActivity(Intent(requireContext(), ChoosePaymentGatewayActivity::class.java))
                     }
 
                     ModuleTypes.MediaPicker -> {
