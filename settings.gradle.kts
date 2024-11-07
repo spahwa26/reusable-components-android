@@ -16,6 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven("https://jitpack.io")
     }
 }
 
@@ -25,4 +26,7 @@ include(":adapter")
 include(":viewpageradapter")
 include(":permissions")
 include(":reusableapi")
-
+include(":media-picker")
+include(":payment-app")
+include(":ml-kit")
+include(":loaders")

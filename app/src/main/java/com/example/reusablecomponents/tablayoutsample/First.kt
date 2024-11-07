@@ -1,15 +1,14 @@
-package com.example.reusablecomponents.fragments
+package com.example.reusablecomponents.tablayoutsample
 
 import android.Manifest
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.adapter.GenericAdapter
 import com.example.adapter.ItemComparator
 import com.example.adapter.setup
@@ -20,13 +19,13 @@ import com.example.reusablecomponents.databinding.ItemViewBinding
 
 
 class First : Fragment() {
-    private lateinit var fragmentFirstBinding:FragmentFirstBinding
+    private lateinit var fragmentFirstBinding: FragmentFirstBinding
     private var list: ArrayList<NameData> = ArrayList()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        fragmentFirstBinding= FragmentFirstBinding.inflate(inflater,container,false)
+        fragmentFirstBinding = FragmentFirstBinding.inflate(inflater, container, false)
         return fragmentFirstBinding.root
     }
 
@@ -43,7 +42,10 @@ class First : Fragment() {
                 itemBinding.name.text = nameData.name
             },
             onItemClick = { nameData, position ->
-                requireContext().checkAndShowSettingsDialogForPermission(Manifest.permission.CAMERA, PermissionHelper.PermissionType.CAMERA)
+                requireContext().checkAndShowSettingsDialogForPermission(
+                    Manifest.permission.CAMERA,
+                    PermissionHelper.PermissionType.CAMERA
+                )
             }
         )
 
@@ -51,6 +53,7 @@ class First : Fragment() {
         testComparator(adapter)
         super.onViewCreated(view, savedInstanceState)
     }
+
     private fun testComparator(adapter: GenericAdapter<NameData, ItemViewBinding>) {
         // Test 1: Update existing item
         Handler(Looper.getMainLooper()).postDelayed({
@@ -90,13 +93,19 @@ class First : Fragment() {
     class UserComparator : ItemComparator<NameData> {
         override fun areItemsTheSame(oldItem: NameData, newItem: NameData): Boolean {
             val result = oldItem.name == newItem.name
-            Log.d("UserComparator", "areItemsTheSame: old=${oldItem.name}, new=${newItem.name}, result=$result")
+            Log.d(
+                "UserComparator",
+                "areItemsTheSame: old=${oldItem.name}, new=${newItem.name}, result=$result"
+            )
             return result
         }
 
         override fun areContentsTheSame(oldItem: NameData, newItem: NameData): Boolean {
             val result = oldItem == newItem
-            Log.d("UserComparator", "areContentsTheSame: old=${oldItem.name}, new=${newItem.name}, result=$result")
+            Log.d(
+                "UserComparator",
+                "areContentsTheSame: old=${oldItem.name}, new=${newItem.name}, result=$result"
+            )
             return result
         }
     }

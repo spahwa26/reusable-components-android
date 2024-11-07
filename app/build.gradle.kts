@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.android.navigation.safeargs)
+    alias(libs.plugins.android.ksp)
+    alias(libs.plugins.android.hilt)
 }
 
 android {
@@ -35,6 +38,7 @@ android {
     }
     buildFeatures{
         viewBinding=true
+        buildConfig = true
     }
 }
 
@@ -43,7 +47,12 @@ dependencies {
     implementation(project(":viewpageradapter"))
     implementation(project(":permissions"))
     implementation(project(":reusableapi"))
+    implementation(project(":media-picker"))
+    implementation(project(":payment-app"))
+    implementation(project(":ml-kit"))
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -51,4 +60,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.glide)
+    ksp(libs.glide.compiler)
+
+    implementation(libs.hilt.android)
+    ksp(libs.dagger.hilt.compiler)
 }

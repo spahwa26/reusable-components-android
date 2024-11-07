@@ -1,11 +1,10 @@
-package com.example.reusablecomponents.fragments
+package com.example.reusablecomponents.tablayoutsample
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.reusablecomponents.R
 import com.example.reusablecomponents.databinding.FragmentSecondBinding
 
 
