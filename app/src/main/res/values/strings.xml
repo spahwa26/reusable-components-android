@@ -12,4 +12,10 @@
     <string name="select_both_images_and_videos">Select Both Images And Videos</string>
     <string name="oval_cropped_image">Oval Cropped Image</string>
     <string name="rectangle_cropped_image">Rectangle Cropped Image</string>
+    <string name="version_placeholder" translatable="false">Version: %s %d (%s)</string>
+    <string name="camera_permission">Camera Permission</string>
+    <string name="location_permission">Location Permission</string>
+    <string name="notification_permission">Notification Permission</string>
+    <string name="multiple_permissions">Multiple Permissions</string>
+    <string name="all_storage_permission">Manage All Files Permission</string>
 </resources>

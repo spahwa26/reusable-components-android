@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_20"
+    tools:context=".permissions.PermissionsActivity">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCameraPermission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:text="@string/camera_permission" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLocationPermission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:text="@string/location_permission" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNotificationPermission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:text="@string/notification_permission" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnManageAllFiles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:text="@string/all_storage_permission" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMultiplePermissions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:text="@string/multiple_permissions" />
+
+</LinearLayout>

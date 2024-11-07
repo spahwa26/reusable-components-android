@@ -1,4 +1,4 @@
-package com.example.permissions
+package com.example.permisssions
 
 import android.Manifest
 import android.app.Activity
@@ -186,7 +186,9 @@ object PermissionHelper {
         permissionsToCheck.addAll(getCalendarPermissions(config))
         permissionsToCheck.addAll(getPhonePermissions(config))
 
-        return permissionsToCheck.all { isPermissionGranted(it) }
+        return permissionsToCheck.any {
+            (!isPermissionGranted(it))
+        }
     }
     private fun Context.showPermissionSettingsDialog(permissionType: PermissionType) {
         AlertDialog.Builder(this)

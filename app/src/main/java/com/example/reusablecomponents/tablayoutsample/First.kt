@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment
 import com.example.adapter.GenericAdapter
 import com.example.adapter.ItemComparator
 import com.example.adapter.setup
-import com.example.permissions.PermissionHelper
-import com.example.permissions.PermissionHelper.checkAndShowSettingsDialogForPermission
+import com.example.permisssions.PermissionHelper
+import com.example.permisssions.PermissionHelper.checkAndShowSettingsDialogForPermission
 import com.example.reusablecomponents.databinding.FragmentFirstBinding
 import com.example.reusablecomponents.databinding.ItemViewBinding
 

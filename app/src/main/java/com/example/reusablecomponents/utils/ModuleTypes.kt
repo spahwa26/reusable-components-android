@@ -6,4 +6,6 @@ enum class ModuleTypes {
     MlKit,
     Payments,
     TabsExample,
+    Permissions,
+    SimpleList,
 }

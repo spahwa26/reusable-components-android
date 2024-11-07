@@ -14,6 +14,7 @@ import com.example.mlkitapp.MainActivityMlKit
 import com.example.paymentapp.ui.ChoosePaymentGatewayActivity
 import com.example.reusablecomponents.databinding.FragmentHomeBinding
 import com.example.reusablecomponents.databinding.ItemModuleTypeBinding
+import com.example.reusablecomponents.permissions.PermissionsActivity
 import com.example.reusablecomponents.utils.BaseFragment
 import com.example.reusablecomponents.utils.ModuleTypes
 import dagger.hilt.android.AndroidEntryPoint
@@ -60,6 +61,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
                     ModuleTypes.TabsExample -> {
                         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabExampleFragment())
+                    }
+
+                    ModuleTypes.Permissions -> {
+                        requireContext().startActivity(Intent(requireContext(), PermissionsActivity::class.java))
+                    }
+
+                    ModuleTypes.SimpleList -> {
+                        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSimpleListFragment())
                     }
 
                     else -> {
