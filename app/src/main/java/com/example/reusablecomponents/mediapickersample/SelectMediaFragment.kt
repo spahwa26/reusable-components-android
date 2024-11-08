@@ -2,17 +2,25 @@ package com.example.reusablecomponents.mediapickersample
 
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reusablecomponents.R
 import com.example.reusablecomponents.databinding.FragmentSelectMediaBinding
+import com.example.reusablecomponents.utils.clearInternalCache
+import com.example.reusablecomponents.utils.getFIleFromUri
 import com.nickelfox.media_picker.ui.MediaPickerForFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
+
 
 @AndroidEntryPoint
 class SelectMediaFragment : Fragment() {
@@ -31,6 +39,7 @@ class SelectMediaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireContext().clearInternalCache()
         binding.apply {
             mediaItemList = ArrayList()
             mediaPickerForFragment = MediaPickerForFragment(this@SelectMediaFragment)
@@ -89,11 +98,17 @@ class SelectMediaFragment : Fragment() {
             isMultiple,
             isVideoOnly,
             isBoth
-        ) { mediaUris, mediaPaths ->
-            mediaPaths.forEach {
-                mediaItemList.add(File(it))
+        ) { mediaUris, _ ->
+            CoroutineScope(IO).launch {
+                mediaUris.forEach {
+                    requireContext().getFIleFromUri(it)?.let {file->
+                        mediaItemList.add(file)
+                    }
+                }
+                withContext(Main){
+                    addFileToAdapter()
+                }
             }
-            addFileToAdapter()
         }
     }
 

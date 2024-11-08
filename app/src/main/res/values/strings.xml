@@ -18,4 +18,18 @@
     <string name="notification_permission">Notification Permission</string>
     <string name="multiple_permissions">Multiple Permissions</string>
     <string name="all_storage_permission">Manage All Files Permission</string>
+    <string name="shimmer_loader">Shimmer Loader</string>
+    <string name="circular_loader">Circular Loader</string>
+    <string name="dots_loader">Dots Loader</string>
+    <string name="pulse_loader">Pulse Loader</string>
+    <string name="circular_spinner">Circular Spinner</string>
+    <string name="horizontal_progressbar">Horizontal ProgressBar</string>
+    <string name="ripple_loader">Ripple Loader</string>
+    <string name="horizontal_percent_progressbar">Horizontal Percent ProgressBar</string>
+    <string name="dots_fady_loader">Dots Fady Loader</string>
+    <string name="dots_circular_loader">Dots Circular Loader</string>
+    <string name="dots_scale_loader">Dots Scale Loader</string>
+    <string name="rectangular_spinner">Rectangular Spinner</string>
+    <string name="none">none</string>
+    <string name="swipe_refresh">Swipe Refresh</string>
 </resources>

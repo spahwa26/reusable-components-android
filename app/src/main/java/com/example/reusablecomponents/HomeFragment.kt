@@ -14,6 +14,7 @@ import com.example.mlkitapp.MainActivityMlKit
 import com.example.paymentapp.ui.ChoosePaymentGatewayActivity
 import com.example.reusablecomponents.databinding.FragmentHomeBinding
 import com.example.reusablecomponents.databinding.ItemModuleTypeBinding
+import com.example.reusablecomponents.loaders.LoaderActivity
 import com.example.reusablecomponents.permissions.PermissionsActivity
 import com.example.reusablecomponents.utils.BaseFragment
 import com.example.reusablecomponents.utils.ModuleTypes
@@ -42,6 +43,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             },
             onItemClick = { moduleType, position ->
                 when (moduleType) {
+                    ModuleTypes.Loaders -> {
+                        startActivity(Intent(requireContext(), LoaderActivity::class.java))
+                    }
                     ModuleTypes.MlKit -> {
                         startActivity(Intent(requireContext(), MainActivityMlKit::class.java))
                     }

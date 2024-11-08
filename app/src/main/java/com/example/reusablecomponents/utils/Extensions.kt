@@ -2,12 +2,15 @@ package com.example.reusablecomponents.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.media.MediaMetadataRetriever
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.webkit.MimeTypeMap
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.ProgressBar
@@ -24,6 +27,10 @@ import com.example.reusablecomponents.R
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.snackbar.Snackbar
+import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -184,4 +191,34 @@ val String.isNewVersionAvailable: Boolean
 
 fun String.toMultilineWords(): String {
     return this.trim().replace(" ", "\n")
+}
+
+fun Context.getFIleFromUri(uri: Uri): File? {
+    var inputStream: InputStream? = null
+    val outputStream: OutputStream
+    val mime = MimeTypeMap.getSingleton()
+    val extension = mime.getExtensionFromMimeType(contentResolver.getType(uri))
+    val file = uri.lastPathSegment?.let { File(cacheDir, "${it}.$extension".replace(":", "_")) }
+    return try {
+        inputStream = contentResolver.openInputStream(uri)
+        outputStream = FileOutputStream(file)
+        inputStream?.use { input ->
+            outputStream.use {
+                input.copyTo(it)
+            }
+        }
+        file
+    } catch (e: Exception) {
+        null
+    } finally {
+        inputStream?.close()
+    }
+}
+
+fun Context.clearInternalCache() {
+    try {
+        cacheDir.deleteRecursively()
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
 }

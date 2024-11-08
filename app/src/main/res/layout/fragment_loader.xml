@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.LoaderFragment">
+
+        <Button
+            android:id="@+id/btnShimmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/shimmer_loader"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnCircular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/btnCircular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/circular_loader"
+            app:layout_constraintBottom_toTopOf="@+id/btnDotsLoader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnShimmer" />
+
+        <Button
+            android:id="@+id/btnDotsLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dots_loader"
+            app:layout_constraintBottom_toTopOf="@+id/btnPulseLoader"
+            app:layout_constraintEnd_toEndOf="@id/btnCircular"
+            app:layout_constraintStart_toStartOf="@id/btnCircular"
+            app:layout_constraintTop_toBottomOf="@+id/btnCircular" />
+
+        <Button
+            android:id="@+id/btnPulseLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pulse_loader"
+            app:layout_constraintBottom_toTopOf="@+id/btnCircularSpinner"
+            app:layout_constraintEnd_toEndOf="@id/btnDotsLoader"
+            app:layout_constraintStart_toStartOf="@id/btnDotsLoader"
+            app:layout_constraintTop_toBottomOf="@+id/btnDotsLoader" />
+
+        <Button
+            android:id="@+id/btnCircularSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/circular_spinner"
+            app:layout_constraintBottom_toTopOf="@+id/btnHorizontalProgress"
+            app:layout_constraintEnd_toEndOf="@id/btnPulseLoader"
+            app:layout_constraintStart_toStartOf="@id/btnPulseLoader"
+            app:layout_constraintTop_toBottomOf="@+id/btnPulseLoader" />
+
+        <Button
+            android:id="@+id/btnHorizontalProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/horizontal_progressbar"
+            app:layout_constraintBottom_toTopOf="@+id/btnHorizontalProgressPercent"
+            app:layout_constraintEnd_toEndOf="@id/btnCircularSpinner"
+            app:layout_constraintStart_toStartOf="@id/btnCircularSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/btnCircularSpinner" />
+
+        <Button
+            android:id="@+id/btnHorizontalProgressPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/horizontal_percent_progressbar"
+            app:layout_constraintBottom_toTopOf="@+id/btnRippleLoader"
+            app:layout_constraintEnd_toEndOf="@id/btnHorizontalProgress"
+            app:layout_constraintStart_toStartOf="@id/btnHorizontalProgress"
+            app:layout_constraintTop_toBottomOf="@+id/btnHorizontalProgress" />
+
+        <Button
+            android:id="@+id/btnRippleLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ripple_loader"
+            app:layout_constraintBottom_toTopOf="@+id/btnDotsFadyLoader"
+            app:layout_constraintEnd_toEndOf="@id/btnHorizontalProgressPercent"
+            app:layout_constraintStart_toStartOf="@id/btnHorizontalProgressPercent"
+            app:layout_constraintTop_toBottomOf="@+id/btnHorizontalProgressPercent" />
+
+        <Button
+            android:id="@+id/btnDotsFadyLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dots_fady_loader"
+            app:layout_constraintBottom_toTopOf="@+id/btnDotsFadyCirclularLoader"
+            app:layout_constraintEnd_toEndOf="@id/btnRippleLoader"
+            app:layout_constraintStart_toStartOf="@id/btnRippleLoader"
+            app:layout_constraintTop_toBottomOf="@+id/btnRippleLoader" />
+
+        <Button
+            android:id="@+id/btnDotsFadyCirclularLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dots_circular_loader"
+            app:layout_constraintBottom_toTopOf="@+id/btnDotsScalyLoader"
+            app:layout_constraintEnd_toEndOf="@id/btnDotsFadyLoader"
+            app:layout_constraintStart_toStartOf="@id/btnRippleLoader"
+            app:layout_constraintTop_toBottomOf="@+id/btnDotsFadyLoader" />
+
+        <Button
+            android:id="@+id/btnDotsScalyLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dots_scale_loader"
+            app:layout_constraintBottom_toTopOf="@+id/btnRectangularSpinner"
+            app:layout_constraintEnd_toEndOf="@id/btnDotsFadyCirclularLoader"
+            app:layout_constraintStart_toStartOf="@id/btnDotsFadyCirclularLoader"
+            app:layout_constraintTop_toBottomOf="@+id/btnDotsFadyCirclularLoader" />
+
+        <Button
+            android:id="@+id/btnRectangularSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rectangular_spinner"
+            app:layout_constraintBottom_toTopOf="@+id/btnSwipeRefresh"
+            app:layout_constraintEnd_toEndOf="@id/btnDotsScalyLoader"
+            app:layout_constraintStart_toStartOf="@id/btnDotsScalyLoader"
+            app:layout_constraintTop_toBottomOf="@+id/btnDotsScalyLoader" />
+
+        <Button
+            android:id="@+id/btnSwipeRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="@string/swipe_refresh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btnRectangularSpinner"
+            app:layout_constraintStart_toStartOf="@id/btnRectangularSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/btnRectangularSpinner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

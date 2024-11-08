@@ -53,6 +53,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10"
+    }
     buildFeatures{
         viewBinding=true
         buildConfig = true
@@ -67,6 +74,14 @@ dependencies {
     implementation(project(":media-picker"))
     implementation(project(":payment-app"))
     implementation(project(":ml-kit"))
+    implementation(project(":loaders"))
+
+    //compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.tooling)
+    implementation(libs.compose.material)
+    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)

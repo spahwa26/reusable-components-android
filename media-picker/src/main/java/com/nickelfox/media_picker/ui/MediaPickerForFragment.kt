@@ -3,6 +3,7 @@ package com.nickelfox.media_picker.ui
 import android.app.AlertDialog
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.nickelfox.media_picker.R
@@ -74,10 +75,10 @@ class MediaPickerForFragment(private val fragment: Fragment) {
                 isVideo,
                 isBothImagesVideos
             ) { granted, list ->
-                if (granted)
-                    startMediaPicker(isMultiple, isVideoOnly, isBothImagesVideos)
-                else
+                if (!granted && Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
                     permissionLauncher.launch(list?.toTypedArray())
+                else
+                    startMediaPicker(isMultiple, isVideoOnly, isBothImagesVideos)
             }
         }
     }

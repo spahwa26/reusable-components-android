@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav_graph.xml"
+    app:startDestination="@id/loaderFragment">
+
+    <fragment
+        android:id="@+id/loaderFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.LoaderFragment"
+        android:label="LoaderFragment"
+        tools:layout="@layout/fragment_loader">
+        <action
+            android:id="@+id/action_circular_loader"
+            app:destination="@id/circularLoaderFragment" />
+        <action
+            android:id="@+id/action_dots_loader"
+            app:destination="@id/dotsLoaderFragment" />
+        <action
+            android:id="@+id/action_pulse_loader"
+            app:destination="@id/pulseLoaderFragment" />
+        <action
+            android:id="@+id/action_circular_spinner"
+            app:destination="@id/circularSpinnerFragment" />
+        <action
+            android:id="@+id/action_horizontal_progress"
+            app:destination="@id/HorizontalProgressFragment" />
+        <action
+            android:id="@+id/action_ripple_loader"
+            app:destination="@id/RippleLoaderFragment" />
+        <action
+            android:id="@+id/action_horizontal_percent_loader"
+            app:destination="@id/HorizontalProgressBarWithPercentFragment" />
+        <action
+            android:id="@+id/action_circular_dots_loader"
+            app:destination="@id/CircularDotsFragment" />
+        <action
+            android:id="@+id/action_dots_fady"
+            app:destination="@id/DotsFadyFragment" />
+        <action
+            android:id="@+id/action_dots_scaly"
+            app:destination="@id/DotsScalyFragment" />
+        <action
+            android:id="@+id/action_rectangular_spinner"
+            app:destination="@id/RectangularSpinnerFragment" />
+        <action
+            android:id="@+id/action_swipe_refresh"
+            app:destination="@id/SwipeRefreshFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/circularLoaderFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.CircularLoaderFragment"
+        android:label="CircularLoaderFragment"
+        tools:layout="@layout/fragment_circular_loader" />
+
+    <fragment
+        android:id="@+id/dotsLoaderFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.DotsLoaderFragment"
+        android:label="DotsLoaderFragment"
+        tools:layout="@layout/fragment_dots_loader" />
+
+    <fragment
+        android:id="@+id/pulseLoaderFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.PulseLoaderFragment"
+        android:label="PulseLoaderFragment"
+        tools:layout="@layout/fragment_pulse_loader" />
+
+    <fragment
+        android:id="@+id/circularSpinnerFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.CircularSpinnerFragment"
+        android:label="CircularSpinnerFragment"
+        tools:layout="@layout/fragment_circular_spinner" />
+
+    <fragment
+        android:id="@+id/HorizontalProgressFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.HorizontalProgressFragment"
+        android:label="HorizontalProgressFragment"
+        tools:layout="@layout/fragment_horizontal_progress" />
+
+    <fragment
+        android:id="@+id/RippleLoaderFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.RippleLoaderFragment"
+        android:label="RippleLoaderFragment"
+        tools:layout="@layout/fragment_ripple_loader" />
+
+    <fragment
+        android:id="@+id/HorizontalProgressBarWithPercentFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.HorizontalProgressBarWithPercentFragment"
+        android:label="HorizontalProgressBarWithPercentFragment"
+        tools:layout="@layout/fragment_horizontal_progress_bar_with_percent" />
+
+    <fragment
+        android:id="@+id/CircularDotsFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.CircularDotsFragment"
+        android:label="CircularDotsFragment"
+        tools:layout="@layout/fragment_circular_dots" />
+
+    <fragment
+        android:id="@+id/DotsFadyFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.DotsFadyFragment"
+        android:label="DotsFadyFragment"
+        tools:layout="@layout/fragment_dots_fady" />
+
+    <fragment
+        android:id="@+id/DotsScalyFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.DotsScalyFragment"
+        android:label="DotsScalyFragment"
+        tools:layout="@layout/fragment_dots_scaly" />
+
+    <fragment
+        android:id="@+id/RectangularSpinnerFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.RectangularSpinnerFragment"
+        android:label="RectangularSpinnerFragment"
+        tools:layout="@layout/fragment_rectangular_spinner" />
+
+    <fragment
+        android:id="@+id/SwipeRefreshFragment"
+        android:name="com.example.reusablecomponents.loaders.fragments.SwipeRefreshFragment"
+        android:label="SwipeRefreshFragment"
+        tools:layout="@layout/fragment_swipe_refresh" />
+
+</navigation>
