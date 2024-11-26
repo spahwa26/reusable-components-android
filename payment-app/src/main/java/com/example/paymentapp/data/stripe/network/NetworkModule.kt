@@ -44,11 +44,11 @@ object NetworkModule {
             .writeTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS).addInterceptor(tokenInterceptor)
 
-        if (BuildConfig.DEBUG) {
+
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
             client.addInterceptor(logging)
-        }
+
 
         return client.build()
     }

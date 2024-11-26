@@ -1,26 +1,25 @@
 package com.example.paymentapp.data.stripe.models
 
 data class CustomerInfo(
-    val address: Any,
+    val address: String,
     val balance: Int,
     val created: Int,
-    val currency: Any,
-    val default_source: Any,
+    val currency: String,
+    val default_source: String,
     val delinquent: Boolean,
-    val description: Any,
-    val discount: Any,
-    val email: Any,
+    val description: String,
+    val discount: String,
+    val email: String,
     val id: String,
     val invoice_prefix: String,
     val invoice_settings: InvoiceSettings,
     val livemode: Boolean,
     val metadata: Metadata,
-    val name: Any,
+    val name: String,
     val next_invoice_sequence: Int,
-    val `object`: String,
-    val phone: Any,
-    val preferred_locales: List<Any>,
-    val shipping: Any,
+    val phone: String,
+    val preferred_locales: List<String>,
+    val shipping: String,
     val tax_exempt: String,
-    val test_clock: Any
+    val test_clock: String
 )

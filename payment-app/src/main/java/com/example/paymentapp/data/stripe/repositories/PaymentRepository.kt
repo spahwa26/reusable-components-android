@@ -18,9 +18,13 @@ class PaymentRepository @Inject constructor(
 ) {
     suspend fun getCustomerId(): CustomerInfo? {
         val response = api.getCustomerId()
-        if (response.isSuccessful)
+        Log.i("strippppppppppp:","getCustomerId response: ${response.body().toString()}" )
+        if (response.isSuccessful) {
+            Log.i("strippppppppppp:","getCustomerId: ${response.body().toString()}" )
             return response.body()
+        }
         else {
+            Log.i("strippppppppppp:","getCustomerId: ${response.errorBody().toString()}" )
             throw getApiException(response.errorBody())
         }
     }
@@ -30,8 +34,9 @@ class PaymentRepository @Inject constructor(
         val body = mapOf(
             "customer" to customerID)
         val response = api.getEphemeralKey(body)
-        if (response.isSuccessful)
+        if (response.isSuccessful) {
             return response.body()
+        }
         else {
             throw getApiException(response.errorBody())
         }
@@ -62,10 +67,14 @@ class PaymentRepository @Inject constructor(
         val body = mapOf(
             "source" to tokenId
         )
+        Log.i("strippppppppppp:","addCard: $body" )
         val response = api.addCard(customerId,body)
-        if (response.isSuccessful)
+        if (response.isSuccessful) {
+            Log.i("strippppppppppp:","success: ${response.body()}" )
             return response.body()
+        }
         else {
+            Log.i("strippppppppppp:","error: ${response.errorBody()}" )
             throw getApiException(response.errorBody())
         }
     }

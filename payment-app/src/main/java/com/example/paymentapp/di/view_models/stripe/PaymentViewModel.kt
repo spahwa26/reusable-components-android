@@ -39,6 +39,7 @@ class PaymentsViewModel @Inject constructor(
         try {
             _viewState.postValue(PaymentsViewState.Loading)
             val result = repository.getCustomerId()
+            Log.i("strippppppppppp:","customerIDRes: ${result?.id}" )
             preferences.customerId = result?.id
             if (result != null) {
                 if (getEphemeralKey) {
@@ -94,6 +95,7 @@ class PaymentsViewModel @Inject constructor(
     fun addCard(tokenId: String) = viewModelScope.launch(Dispatchers.IO) {
         try {
             _viewState.postValue(PaymentsViewState.Loading)
+            Log.i("strippppppppppp:","customerID: $customerID" )
             val result = customerID?.let { repository.addCard(it, tokenId) }
             if (result != null) {
                 _viewState.postValue(PaymentsViewState.Idle)

@@ -19,3 +19,12 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontwarn proguard.annotation.Keep
+-dontwarn proguard.annotation.KeepClassMembers
+
+-keep class androidx.fragment.app.FragmentContainerView { *; }
+
+-keep public class com.example.paymentapp.data.stripe.models.** {
+    public protected *;
+}
