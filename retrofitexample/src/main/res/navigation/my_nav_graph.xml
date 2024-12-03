@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav_graph"
+    app:startDestination="@id/blankFragment">
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.app.retrofitexample.ui.samplefragment.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/actionCategoryGridFragment"
+            app:destination="@id/categoryGridFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryGridFragment"
+        android:name="com.app.retrofitexample.ui.categories.CategoryGridFragment"
+        android:label="fragment_category_grid"
+        tools:layout="@layout/fragment_category_grid" />
+</navigation>

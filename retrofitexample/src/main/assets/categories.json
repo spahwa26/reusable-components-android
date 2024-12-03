@@ -1,0 +1,44 @@
+{
+  "data" : [
+    {
+      "category_id": "12",
+      "name": "Mobile",
+      "imageUrl": "https://freepngimg.com/download/gym_equipments/40769-3-gym-equipment-png-download-free.png"
+    },
+    {
+      "category_id": "13",
+      "name": "Laptop",
+      "imageUrl": "https://5.imimg.com/data5/CO/HL/MY-3902465/stainless-steel-utensils-06-500x500.png"
+    },
+    {
+      "category_id": "14",
+      "name": "Mobile",
+      "imageUrl": "https://freepngimg.com/thumb/furniture/4-2-furniture-png-clipart.png"
+    },
+    {
+      "category_id": "15",
+      "name": "Mobile",
+      "imageUrl": "https://image.shutterstock.com/image-illustration/3d-illustration-empty-light-bulb-260nw-749599306.jpg"
+    },
+    {
+      "category_id": "16",
+      "name": "Mobile",
+      "imageUrl": "https://freepngimg.com/thumb/piano/1-2-piano-png-clipart.png"
+    },
+    {
+      "category_id": "17",
+      "name": "Mobile",
+      "imageUrl": "https://freepngimg.com/download/adidas_shoes/1-2-adidas-shoes-png.png"
+    },
+    {
+      "category_id": "18",
+      "name": "Mobile",
+      "imageUrl": "https://atlas-content-cdn.pixelsquid.com/assets_v2/152/1520580029770110541/jpeg-600/G03.jpg?modifiedAt=1"
+    },
+    {
+      "category_id": "19",
+      "name": "Mobile",
+      "imageUrl": "https://freepngimg.com/thumb/categories/1508.png"
+    }
+  ]
+}

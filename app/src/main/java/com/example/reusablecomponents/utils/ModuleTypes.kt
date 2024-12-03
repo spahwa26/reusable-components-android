@@ -8,4 +8,5 @@ enum class ModuleTypes {
     TabsExample,
     Permissions,
     SimpleList,
+    Network,
 }

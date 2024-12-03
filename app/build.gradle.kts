@@ -63,14 +63,11 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        compose = true
-        buildConfig = true
-    }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.10"
     }
     buildFeatures{
+        compose = true
         viewBinding=true
         buildConfig = true
     }
@@ -85,6 +82,7 @@ dependencies {
     implementation(project(":payment-app"))
     implementation(project(":ml-kit"))
     implementation(project(":loaders"))
+    implementation(project(":retrofitexample"))
 
     //compose
     implementation(platform(libs.androidx.compose.bom))
@@ -106,6 +104,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.glide)
     ksp(libs.glide.compiler)
+
 
     implementation(libs.hilt.android)
     ksp(libs.dagger.hilt.compiler)

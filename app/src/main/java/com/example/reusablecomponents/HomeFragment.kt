@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.app.retrofitexample.ui.NetworkActivity
 import com.example.adapter.GenericAdapter
 import com.example.adapter.ItemComparator
 import com.example.adapter.setup
@@ -73,6 +74,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
                     ModuleTypes.SimpleList -> {
                         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSimpleListFragment())
+                    }
+
+                    ModuleTypes.Network -> {
+                        startActivity(Intent(requireContext(), NetworkActivity::class.java))
                     }
 
                     else -> {

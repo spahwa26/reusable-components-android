@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RetrofitExample</string>
+    <string name="sample_text">This is sample text at position %d</string>
+    <string name="call_categories">Call Categories</string>
+</resources>
