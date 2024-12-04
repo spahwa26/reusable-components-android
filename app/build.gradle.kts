@@ -2,18 +2,19 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.android.navigation.safeargs)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.android.ksp)
     alias(libs.plugins.android.hilt)
 }
 
 android {
     namespace = "com.example.reusablecomponents"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.reusablecomponents"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
